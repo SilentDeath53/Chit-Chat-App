@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chit-Chat App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header>
+        <h1>Chit-Chat</h1>
+        <p>Real-time messaging with Socket.IO</p>
+      </header>
+
+      <section class="setup" id="setup">
+        <h2>Join the conversation</h2>
+        <form id="join-form">
+          <label for="username">Display name</label>
+          <input id="username" name="username" placeholder="Jane Doe" required />
+          <button type="submit">Join chat</button>
+        </form>
+      </section>
+
+      <section class="chat hidden" id="chat">
+        <div class="meta">
+          <span id="status">Connecting...</span>
+          <button id="leave" type="button">Leave</button>
+        </div>
+        <div class="messages" id="messages"></div>
+        <form id="message-form">
+          <input
+            id="message"
+            name="message"
+            placeholder="Type your message"
+            autocomplete="off"
+            required
+          />
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+  </body>
+</html>
